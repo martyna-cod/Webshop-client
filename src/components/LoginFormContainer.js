@@ -1,36 +1,31 @@
- import React, { Component } from "react";
-import LoginForm from "./LoginForm";
-import { connect } from "react-redux";
-import { login } from "../actions/user";
+import React, { Component } from 'react';
+import LoginForm from './LoginForm';
+import { connect } from 'react-redux';
+import { login } from '../actions/user';
 
 class LoginFormContainer extends Component {
-  state = { email: "", password: "" }
+	state = { email: '', password: '' };
 
+	onChange = (event) => {
+		this.setState({ [event.target.name]: event.target.value });
+	};
 
-  onChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+	onSubmit = (event) => {
+		event.preventDefault();
+		this.props.login(this.state.email, this.state.password);
+	};
 
-  onSubmit = event => {
-    event.preventDefault();
-    this.props.login(this.state.email, this.state.password);
-  };
-
-  render() {
-    return (
-      <div>
-        <LoginForm
-          onChange={this.onChange}
-          onSubmit={this.onSubmit}
-          values={this.state}
-        />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<LoginForm onChange={this.onChange} onSubmit={this.onSubmit} values={this.state} />
+			</div>
+		);
+	}
 }
 
-const mapStateToProps = state => ({
-  user: state.user
+const mapStateToProps = (state) => ({
+	user: state.user
 });
 
-export default connect(mapStateToProps, { login }) (LoginFormContainer);
+export default connect(mapStateToProps, { login })(LoginFormContainer);
