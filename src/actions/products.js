@@ -1,5 +1,5 @@
 import request from "superagent";
-const baseUrl = "http://localhost:4005";
+const baseUrl = "http://localhost:4050";
 export const ALL_PRODUCTS = "ALL_PRODUCTS"
 export const PRODUCT ="PRODUCT"
   

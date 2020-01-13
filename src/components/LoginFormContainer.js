@@ -12,7 +12,7 @@ class LoginFormContainer extends Component {
 
 	onSubmit = (event) => {
 		event.preventDefault();
-		this.props.login(this.state.email, this.state.password);
+		this.props.login(this.state.email, this.state.password); 
 	};
 
 	render() {

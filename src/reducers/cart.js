@@ -10,7 +10,7 @@ export default (state = [], action) => {
       return (state = []);
     case REMOVE_ITEM_FROM_CART:
       return {...state, 
-        cart: state.filter(item => item.id !== action.payload.id)}
+        cart: state.filter(product => product.id !== action.payload.id)}
     default:
       return state;
   }
