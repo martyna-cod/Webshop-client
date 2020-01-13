@@ -1,9 +1,8 @@
 import React from "react";
-import { Card, Button, Alert } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { addItemToCart } from "../actions/cart";
 import { addItemToWish } from '../actions/wish'
 import { connect } from "react-redux";
-import ProductDetails from "./ProductDetails";
 
 function ProductCard(props) {
     console.log("propsy", props)

@@ -1,9 +1,6 @@
 import React from "react";
 import ShoppingCart from "./ShoppingCart";
 import { connect } from "react-redux";
-import { Button, Navbar, Form, FormControl, Nav} from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
-
 
 class ShopingCartContainer extends React.Component {
 
@@ -11,33 +8,7 @@ class ShopingCartContainer extends React.Component {
     return (
       <div>
       <div>
-      <Navbar bg="light" variant="light">
-    <Navbar.Brand href="#home">Webhop</Navbar.Brand>
-    <Nav className="mr-auto">
-    <ion-icon name="IoIosHeart"></ion-icon>
-	<LinkContainer style={{padding: "5px"}} to="/products" >
-                    <Nav active>
-                    Our products 
-                    </Nav>
-                    </LinkContainer> 
-					<LinkContainer  style={{padding: "5px"}}to="/shopping-cart" >
-                    <Nav className="links" active>
-                    Cart
-                    </Nav>
-                    </LinkContainer> 
-					<LinkContainer  style={{padding: "5px"}}to="/products" >
-                    <Nav className="links" active>
-                    Contact
-                    </Nav>
-                    </LinkContainer> 
 
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-primary">Search</Button>
-    
-    </Form>
-  </Navbar>
 
      <h3>Shopping cart</h3>
         </div>

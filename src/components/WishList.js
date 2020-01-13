@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { removeItemFromWish } from '../actions/wish'
-import { Link } from "react-router-bootstrap"
 
 class WishList extends Component {
   handleremoveItemFromWish = id => {
