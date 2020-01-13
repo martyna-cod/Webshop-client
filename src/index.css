@@ -1,5 +1,3 @@
-
-
 body {
   background-image: url("https://images.theconversation.com/files/303322/original/file-20191124-74557-16zkcnl.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip");
   background-repeat: no-repeat;
@@ -84,8 +82,6 @@ body {
 .shopping-cart .product-img {
   width: 100px;
 }
-
-
-.shopping-cart .alert {
-  margin-top: 100px;
+.h6 {
+  text-align: "center" !important;
 }

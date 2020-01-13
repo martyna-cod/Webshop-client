@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Button, Alert } from "react-bootstrap";
 import { addItemToCart } from "../actions/cart";
+import { addItemToWish } from '../actions/wish'
 import { connect } from "react-redux";
 import ProductDetails from "./ProductDetails";
 
@@ -26,6 +27,13 @@ function ProductCard(props) {
 					onClick={() => props.addItemToCart(product)}
 				>
 					Add to cart
+				</Button> <br/>
+				<Button
+					variant="primary"
+					block
+					onClick={() => props.addItemToWish(product)}
+				>
+					Add to wish 
 				</Button>
 			
 			</Card.Body>
@@ -36,5 +44,5 @@ function ProductCard(props) {
 
 export default connect(
 null,
-	{ addItemToCart }
+	{ addItemToCart, addItemToWish }
 )(ProductCard);

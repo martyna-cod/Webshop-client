@@ -1,15 +1,17 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from "react";
+import WishList from "./WishList";
+import { connect } from "react-redux";
 import { Button, Navbar, Form, FormControl, Nav} from 'react-bootstrap'
-import { Component } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
-import { IoIosHeart } from "react-icons/io";
 
-class Home extends Component {
-	render() {
-		return (
-			<div>
-  <Navbar bg="light" variant="light">
+
+class WishListContainer extends React.Component {
+
+  render() {
+    return (
+      <div>
+      <div>
+      <Navbar bg="light" variant="light">
     <Navbar.Brand href="#home">Webhop</Navbar.Brand>
     <Nav className="mr-auto">
     <ion-icon name="IoIosHeart"></ion-icon>
@@ -28,7 +30,7 @@ class Home extends Component {
                     Contact
                     </Nav>
                     </LinkContainer> 
-                    <LinkContainer  style={{padding: "5px"}}to="/wish-list" >
+                    	<LinkContainer  style={{padding: "5px"}}to="/wish-list" >
                     <Nav className="links" active>
                     Wish List
                     </Nav>
@@ -42,24 +44,31 @@ class Home extends Component {
     </Form>
   </Navbar>
 
-
-<div>
-	<h1 style={{marginTop: "80px", marginLeft: "45px" }}>Running is a gift</h1>
-				<p style={{fontSize: "35px", justifyContent: "center"}}>In our webshop you will find everything you need to get better progress and that can help you be more happy</p>
-</div>
-<LinkContainer style={{marginLeft: "50px"}} to="/products">
-					<Button
-					 type="Submit" className="btn-dark"
-						
-					 
-					>
-						See our products
-					</Button>
-				</LinkContainer>
-        
-			</div>
-		)
-	}
+     <h3>WISH LIST</h3>
+        </div>
+        <div>
+        {!this.props.wish && <h2>No products on your wish list.</h2>}
+        {this.props.wish.length > 0 &&
+        this.props.wish.map(product => (
+          <WishList
+          wish={this.props.wish}
+          />
+      
+        ))}   
+      </div>
+      </div>
+    );
+  }
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    wish: state.wish,
+
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { }
+)(WishListContainer);

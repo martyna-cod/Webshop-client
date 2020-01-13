@@ -7,17 +7,17 @@ import ProductListContainer from './components/ProductListContainer';
 import LoginFormContainer from './components/LoginFormContainer'
 import SignUpFormContainer from './components/SignUpFormContainer'
 import ShoppingCartContainer from './components/ShoppingCartContainer'
+import WishListContainer from './components/WishListContainer'
 import 'bootstrap/dist/css/bootstrap.css';
 import ProductDetailsContainer from './components/ProductDetailsContainer';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-
+import { ICON_NAME } from "react-icons/io";
 
 
 function App() {
   return (
-    
     <Provider store={store}>
       <Switch>
       <Route exact path="/" component={Home} />
@@ -26,6 +26,7 @@ function App() {
       <Route exact path="/shopping-cart" component={ShoppingCartContainer} />
       <Route exact path="/product/:productId" component={ProductDetailsContainer} />
       <Route exact path="/products" component={ProductListContainer}/>
+      <Route exact path="/wish-list" component={WishListContainer} />
     </Switch>
  
     </Provider>
