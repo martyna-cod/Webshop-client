@@ -11,7 +11,7 @@ class ShoppingCart extends Component {
     return (
       <div className="shopping-cart">
         <h6>{this.props.name}</h6>
-        <img src={this.props.image} alt="travel-impression" />
+        <img src={this.props.image} alt="" />
         <h6>€ {this.props.price}</h6>
         <div className="buttonsCart">
           <button

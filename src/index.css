@@ -1,7 +1,7 @@
 
 
-#apppage .view {
-  background-image: url("https://scontent-amt2-1.xx.fbcdn.net/v/t1.15752-9/81125711_2532131660237889_3173944822738190336_n.jpg?_nc_cat=103&_nc_ohc=LgBfy4BhKlAAQmFDHVaB_Zkj7ocNR-sxMPxMzKtHsOndHen79yTM_pSvQ&_nc_ht=scontent-amt2-1.xx&oh=21571cf9832cc40cfcac4382733b1208&oe=5EA89AF7");
+body {
+  background-image: url("https://images.theconversation.com/files/303322/original/file-20191124-74557-16zkcnl.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -12,37 +12,80 @@
   line-height: 1.7;
 }
 
-@media only screen and (max-width: 400px) {
-  #apppage .animated img {
-    max-height: 50vh;
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-  }
-}
-@media only screen and (max-width: 767px) {
-  #apppage .animated img {
-    max-height: 35vh;
-    transform: translateX(-50%);
-    left: 50%;
-  }
-}
-
-@media (max-width: 767px) and (orientation: landscape) {
-  #apppage .animated img {
-    max-height: 50vh;
-    transform: translateX(-50%);
-    left: 50%;
-    position: relative;
-  }
-}
-@media (max-width: 1000px) and (orientation: landscape) {
-  #apppage .view {
-    min-height: 150vh;
-  }
-}
-#links {
+.login-form {
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 330px;
   padding: 15px;
+  height: 100%;
+}
+.container {
+	margin: 100px;
+	padding: 30px;
+	min-height: 500px;
+	max-width: 800px;
+	background: white;
+	display: flex;
+	justify-content: left;
+}
+ 
+.products {
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.product-card {
+	margin: 20px;
+}
+
+.product-card img {
+	max-height: 80%;
+	width: auto;
+	max-width: 80%;
+}
+
+.product-card .image {
+	height: 150px;
+	text-align: center;
+}
+
+.textDescription {
+	font-size: 12px;
+	line-height: 0px;
+}
+.textDescription:hover {
+	cursor: pointer;
+}
+.shopping-cart {
+  margin: 0 auto;
+  text-align: center;
+}
 
 
+.shopping-cart table {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.shopping-cart table tfoot {
+  font-weight: bold;
+  text-align: right;
+}
+
+.shopping-cart table td {
+  min-width: 100px;
+}
+
+
+.shopping-cart .product-img {
+  width: 100px;
+}
+
+
+.shopping-cart .alert {
+  margin-top: 100px;
 }

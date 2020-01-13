@@ -7,7 +7,6 @@ class SignUpFormContainer extends Component {
   state = { email: "", password: "" };
 
   onChange = event => {
-    console.log("onChange")
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -15,7 +14,8 @@ class SignUpFormContainer extends Component {
     event.preventDefault();
     this.props.signUp({
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      history: this.props.history.push("/login") 
     });
   };
 

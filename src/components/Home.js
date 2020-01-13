@@ -1,123 +1,60 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import {
-	MDBNavbar,
-	MDBNavbarBrand,
-	MDBNavbarNav,
-	MDBNavItem,
-	MDBNavbarToggler,
-	MDBCollapse,
-	MDBMask,
-	MDBRow,
-	MDBCol,
-	MDBBtn,
-	MDBView,
-	MDBContainer,
-	MDBFormInline,
-	MDBAnimation
-} from 'mdbreact';
-import '../index.css';
-import { LinkContainer } from 'react-router-bootstrap';
-class Home extends React.Component {
-	state = {
-		collapsed: false
-	};
+import { Button, Navbar, Form, FormControl, Nav, Card} from 'react-bootstrap'
+import { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
 
-	handleTogglerClick = () => {
-		this.setState({
-			collapsed: !this.state.collapsed
-		});
-	};
-
+class Home extends Component {
 	render() {
-		const overlay = (
-			<div id="sidenav-overlay" style={{ backgroundColor: 'transparent' }} onClick={this.handleTogglerClick} />
-		);
 		return (
-			<div id="apppage">
-				<Router>
-					<div>
-						<MDBNavbar color="primary-color" dark expand="md" fixed="top" scrolling transparent>
-							<MDBContainer>
-								<MDBNavbarBrand>
-									<strong className="white-text" />
-								</MDBNavbarBrand>
-								<MDBNavbarToggler onClick={this.handleTogglerClick} />
-								<MDBCollapse isOpen={this.state.collapsed} navbar>
-									<MDBNavbarNav left>
-										<LinkContainer to="/Home">
-											<MDBNavItem className="links" active>
-												Home
-											</MDBNavItem>
-										</LinkContainer>
-										<LinkContainer to="/products">
-											<MDBNavItem className="links" active>
-												Our products
-											</MDBNavItem>
-										</LinkContainer>
-										<LinkContainer to="/shopping-cart">
-											<MDBNavItem className="links" active>
-												Cart
-											</MDBNavItem>
-										</LinkContainer>
+			<div>
+  <Navbar bg="light" variant="light">
+    <Navbar.Brand href="#home">Webhop</Navbar.Brand>
+    <Nav className="mr-auto">
+	<LinkContainer style={{padding: "5px"}} to="/products" >
+                    <Nav active>
+                    Our products 
+                    </Nav>
+                    </LinkContainer> 
+					<LinkContainer  style={{padding: "5px"}}to="/shopping-cart" >
+                    <Nav className="links" active>
+                    Cart
+                    </Nav>
+                    </LinkContainer> 
+					<LinkContainer  style={{padding: "5px"}}to="/products" >
+                    <Nav className="links" active>
+                    Contact
+                    </Nav>
+                    </LinkContainer> 
+					<LinkContainer  style={{padding: "5px"}}to="/login" >
+                    <Nav className="links" active>
+                    My account
+                    </Nav>
+                    </LinkContainer> 
+    </Nav>
+    <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-primary">Search</Button>
+    </Form>
+  </Navbar>
 
-										<LinkContainer to="/Home">
-											<MDBNavItem className="links" active>
-												Home
-											</MDBNavItem>
-										</LinkContainer>
-									</MDBNavbarNav>
-									<MDBNavbarNav right>
-										<MDBNavItem>
-											<MDBFormInline waves>
-												<div className="md-form my-0">
-													<input
-														className="form-control mr-sm-2"
-														type="text"
-														placeholder="Search"
-														aria-label="Search"
-													/>
-												</div>
-											</MDBFormInline>
-										</MDBNavItem>
-									</MDBNavbarNav>
-								</MDBCollapse>
-							</MDBContainer>
-						</MDBNavbar>
-						{this.state.collapsed && overlay}
-					</div>
-				</Router>
-				<MDBView>
-					<MDBMask className="d-flex justify-content-center align-items-center gradient">
-						<MDBContainer>
-							<MDBRow>
-								<MDBCol md="6" className="white-text text-center text-md-left mt-xl-5 mb-5">
-									<MDBAnimation type="fadeInLeft" delay=".3s">
-										<h1 className="h1-responsive font-weight-bold mt-sm-5">
-											Make purchases with our app
-										</h1>
-										<hr className="hr-light" />
-										<h6 className="mb-4">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus
-											quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi
-											sequi non animi ea dolor molestiae iste.
-										</h6>
-										<MDBBtn color="white">Download</MDBBtn>
-										<MDBBtn outline color="white">
-											Learn More
-										</MDBBtn>
-									</MDBAnimation>
-								</MDBCol>
 
-								<MDBCol md="6" xl="5" className="mt-xl-5">
-									<MDBAnimation type="fadeInRight" delay=".3s" />
-								</MDBCol>
-							</MDBRow>
-						</MDBContainer>
-					</MDBMask>
-				</MDBView>
+<div>
+	<h1 style={{marginTop: "80px", marginLeft: "45px" }}>Running is a gift</h1>
+				<p style={{fontSize: "35px", justifyContent: "center"}}>In our webshop you will find everything you need to get better progress and that can help you be more happy</p>
+</div>
+<LinkContainer style={{marginLeft: "50px"}} to="/products">
+					<Button
+					 type="Submit" className="btn-dark"
+						
+					 
+					>
+						See our products
+					</Button>
+				</LinkContainer>
 			</div>
-		);
+		)
 	}
 }
 

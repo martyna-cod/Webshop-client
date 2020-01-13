@@ -21,15 +21,17 @@ export function addItemToCart(id, name, image, description, price) {
 }
 
 
-export function removeItemFromCart(id) {
-  return {
-    type: REMOVE_ITEM_FROM_CART,
-    payload: {
-      id: id
-    }
-  };
-}
 
+
+export function removeItemFromCart(product) {
+	return {
+		type: REMOVE_ITEM_FROM_CART,
+		payload: {
+			productId: product.id,
+			price: product.price
+		}
+	};
+}
 
 
 

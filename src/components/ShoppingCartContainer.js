@@ -13,15 +13,11 @@ class ShopingCartContainer extends React.Component {
      
         </div>
         <div>
-        {!this.props.products && <h2>No products in your cart.</h2>}
-        {this.props.products.length > 0 &&
-        this.props.products.map(product => (
+        {!this.props.cart && <h2>No products in your cart.</h2>}
+        {this.props.cart.length > 0 &&
+        this.props.cart.map(product => (
           <ShoppingCart
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            src={product.image}
-            price={product.price}
+          cart={this.props.cart}
           />
       
         ))}   
@@ -33,8 +29,8 @@ class ShopingCartContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.items,
-    products: state.products
+    cart: state.cart,
+
   };
 };
 
