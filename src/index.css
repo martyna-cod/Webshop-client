@@ -1,34 +1,40 @@
 body {
-  background-image: url("https://images.theconversation.com/files/303322/original/file-20191124-74557-16zkcnl.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  min-height: 100vh;
+	background-image: url("http://www.nxtlvlsport.com/wp-content/uploads/2015/04/Gym-Background1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	min-height: 100vh;
+
 }
 
 #apppage h6 {
-  line-height: 1.7;
+	line-height: 1.7;
 }
 
 .login-form {
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  height: 100%;
+	color: rhb(51, 51, 51);
+	direction: ltr;
+	display: block;
+	flex-grow: 1;
+	text-size-adjust: 100%;
+	-webkit-box-direction: normal;
+	-webkit-box-flex: 1;
+	-webkit-font-smoothing: antialiased;
+
 }
-.container {
-	margin: 100px;
-	padding: 30px;
-	min-height: 500px;
-	max-width: 800px;
-	background: white;
-	display: flex;
-	justify-content: left;
+.input-field {
+	color: rgb(51, 51, 51);
+	direction: ltr;
+	
 }
- 
+.shopping-cart {
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	margin-top: 30px;
+}
+
 .products {
 	margin-top: 20px;
 	display: flex;
@@ -55,33 +61,106 @@ body {
 	font-size: 12px;
 	line-height: 0px;
 }
+
 .textDescription:hover {
 	cursor: pointer;
 }
+
 .shopping-cart {
-  margin: 0 auto;
-  text-align: center;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	height: 100%;
 }
 
-
-.shopping-cart table {
-  margin-top: 50px;
-  text-align: center;
-}
-
-.shopping-cart table tfoot {
-  font-weight: bold;
-  text-align: right;
-}
-
-.shopping-cart table td {
-  min-width: 100px;
-}
-
-
-.shopping-cart .product-img {
-  width: 100px;
-}
 .h6 {
-  text-align: "center" !important;
+	text-align: "center" !important;
+}
+.categoryClass {
+	width: 280px;
+	border-right: 1px solid lightgray;
+	margin-right: 30px;
+	padding-right: 10px;
+}
+
+
+.navBar {
+	margin-top: 45px;
+	width: 100%;
+	max-width: 1200px;
+margin-top: 10px;
+	display: block;
+
+
+}
+.icons {
+	
+display: flex;
+color:white;
+padding: 20px
+}
+
+.hybrid-login-form.hybrid-login-form-signup {
+	min-height: 200px
+}
+
+
+.hybrid-login-form {
+	padding: 40px 48px 40px;
+	background-color: rgba(0,0, 0, 0.75);
+	border-radius: 4px;
+	color: rgb(51, 51, 51);
+	display: flex;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	box-sizing: border-box;
+	direction: ltr;
+	flex-direction: column;
+	margin-bottom: 90px;
+	margin: auto;
+	min-height: 660px;
+	min-width: 300px;
+	padding-bottom: 40px;
+	padding-left: 68px;
+	padding-right: 68px;
+	padding-top: 60px;
+	text-size-adjust: 100%;
+	width: 450px;
+	-webkit-box-direction: normal;
+	-webkit-box-orient: vertical;
+	-webkit-font-smoothing: antialiased;
+ }
+ .search-form {
+	color: rgba(0,0, 0, 0.75);
+	margin: auto;	
+	display: flex;
+	color: rgb(51, 51, 51);
+	
+ }
+ .navbar-links {
+	 margin-left: 20px;
+	 display: flex;
+	 font-size: 20px;
+	 padding: 15px;
+
+
+ }
+ .button-search-bar {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	text-decoration-color: white;
+	height: 40px;
+	width: 100px;
+	padding: 2px;
+	margin: auto;
+ }
+a {
+	color: #3D72A4;
 }

@@ -5,7 +5,6 @@ import ProductCard from './ProductCard';
 export default function ProductList(props) {
 	return (
 		<div>
-
 			<div>
 				<h1>Products</h1>
 				<DropdownButton variant="light" id="dropdown-basic-button" title="Sort products by price: ">

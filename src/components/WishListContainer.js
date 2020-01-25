@@ -7,7 +7,7 @@ class WishListContainer extends React.Component {
   render() {
     return (
       <div>
-      <div>
+      <div className="wish-list">
 
 
      <h3>WISH LIST</h3>

@@ -2,6 +2,7 @@ import request from "superagent";
 const baseUrl = "http://localhost:4050";
 export const ALL_PRODUCTS = "ALL_PRODUCTS"
 export const PRODUCT ="PRODUCT"
+export const SEARCH_BY_CATEGORY = 'SEARCH_BY_CATEGORY';
   
 
 function allProducts (payload) {
@@ -44,4 +45,10 @@ export function product (payload) {
        dispatch(action)
      })
      .catch(console.error)  
+}
+export function clickCategory(id) {
+  return {
+      type: SEARCH_BY_CATEGORY,
+      payload: id
+  };
 }

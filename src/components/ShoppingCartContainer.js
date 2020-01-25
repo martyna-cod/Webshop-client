@@ -7,7 +7,7 @@ class ShopingCartContainer extends React.Component {
   render() {
     return (
       <div>
-      <div>
+      <div className="shopping-cart">
 
 
      <h3>Shopping cart</h3>
