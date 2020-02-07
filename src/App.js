@@ -8,9 +8,8 @@ import LoginFormContainer from './components/LoginFormContainer'
 import SignUpFormContainer from './components/SignUpFormContainer'
 import ShoppingCartContainer from './components/ShoppingCartContainer'
 import WishListContainer from './components/WishListContainer'
-import CategoryContainer from './components/CategoryContainer'
 import NavBar from './components/NavBar'
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import ProductDetailsContainer from './components/ProductDetailsContainer';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -27,7 +26,6 @@ function App() {
       <Route exact path="/product/:productId" component={ProductDetailsContainer} />
       <Route exact path="/products" component={ProductListContainer}/>
       <Route exact path="/wish-list" component={WishListContainer} />
-      <Route exact path="/category" component={CategoryContainer} />
     </Provider>
   );
 }

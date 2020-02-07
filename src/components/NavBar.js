@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavDropdown, Button, Navbar, Form, FormControl, Nav } from 'react-bootstrap';
+import { NavDropdown, Dropdown, Button, Navbar, Form, FormControl, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { IoIosHeart } from 'react-icons/io';
 import { IoMdCart } from 'react-icons/io';
@@ -11,37 +11,51 @@ export default function NavBar() {
 <div className="navBar">
 		<Nav className="justify-content-center" activeKey="/home">
 			<div className="navbar-links">
-			<LinkContainer style={{ padding: '5px' }} to="/products">
+			<Dropdown>
+  <Dropdown.Toggle variant= "primary" style={{color: "black", backgroundColor: "white"}} >
+    Women
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">Shoes</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Sport Bra</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">T-Shirts & Tops</Dropdown.Item>
+	<Dropdown.Item href="#/action-3">Shorts</Dropdown.Item>
+	<Dropdown.Item href="#/action-3">Leggins</Dropdown.Item>
+	<Dropdown.Item href="#/action-3">Hoodie & Sweatshirts</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+
+			<Dropdown>
+  <Dropdown.Toggle variant= "primary" style={{color: "black", backgroundColor: "white"}} >
+    Men
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">Shoes</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Stringers</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">T-Shirts</Dropdown.Item>
+	<Dropdown.Item href="#/action-3">Shorts</Dropdown.Item>
+	<Dropdown.Item href="#/action-3">Leggins</Dropdown.Item>
+	<Dropdown.Item href="#/action-3">Hoodie & Sweatshirts</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+					
+		
+				<LinkContainer className="navbar-link" to="/products">
 					<Nav className="links" active>
-						pro
+						Collection
 					</Nav>
 				</LinkContainer>
 		<Nav.Item>
-		  <Nav.Link href="link-1">Link</Nav.Link>
-		</Nav.Item>
-		<Nav.Item>
-		  <Nav.Link href="/products">Products</Nav.Link>
-		</Nav.Item>
-		<Nav.Item>
-		  <Nav.Link eventKey="disabled" disabled>
-			Disabled
-		  </Nav.Link>
+		  	<LinkContainer className="navbar-link" to="/products">
+					<Nav className="links" active>
+						Sale
+					</Nav>
+				</LinkContainer>
 		</Nav.Item>
 		
-		<NavDropdown title="Ladies" id="basic-nav-dropdown">
-						<NavDropdown.Item style={{color: "rgb(229, 9, 20)"}} href="#action/3.1">Shoes</NavDropdown.Item>
-						<NavDropdown.Item href="#action/3.2">Shirts</NavDropdown.Item>
-						<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-						<NavDropdown.Divider />
-						<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-					</NavDropdown>
-					<NavDropdown title="Men" id="basic-nav-dropdown">
-						<NavDropdown.Item href="#action/3.1">Shoes</NavDropdown.Item>
-						<NavDropdown.Item href="#action/3.2">Shirts</NavDropdown.Item>
-						<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-						<NavDropdown.Divider />
-						<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-					</NavDropdown>
+	
 					</div>
 					<div className="search-form">
 					<Form inline style={{marginRight: "1px"}}>
