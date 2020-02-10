@@ -7,11 +7,9 @@ import ProductList from './ProductList';
 class ProductListContainer extends React.Component {
 	componentDidMount() {
 		this.props.getProducts();
-		console.log('props', this.props);
 	}
 
 	render() {
-		console.log(this.props.products, "PROPSY")
 		return <ProductList products={this.props.products} user={this.props.user} />;
 	}
 }

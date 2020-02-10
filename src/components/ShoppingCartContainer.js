@@ -1,40 +1,39 @@
-import React from "react";
+import React, { Component } from "react";
 import ShoppingCart from "./ShoppingCart";
+
 import { connect } from "react-redux";
 
-class ShopingCartContainer extends React.Component {
+class ShoppingCartContainer extends Component {
+	getProductDetails = (cart, products) => {
+		let productsFromCartWithDetails = cart.map(cartProduct =>
+			products.find(product => product.id === cartProduct.productId)
+		);
 
-  render() {
-    return (
-      <div>
-      <div className="shopping-cart">
+		return productsFromCartWithDetails.map((product, index) => {
+			return { ...product, quantity: cart[index].quantity };
+		});
+	};
 
-
-     <h3>Shopping cart</h3>
-        </div>
-        <div>
-        {!this.props.cart && <h2>No products in your cart.</h2>}
-        {this.props.cart.length > 0 &&
-        this.props.cart.map(product => (
-          <ShoppingCart
-          cart={this.props.cart}
-          />
-      
-        ))}   
-      </div>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<ShoppingCart
+				cart={this.props.cart}
+				total={this.props.total}
+				products={this.getProductDetails(this.props.cart, this.props.products)}
+				emptyCart={this.props.emptyCart}
+			/>
+		);
+	}
 }
-
 const mapStateToProps = state => {
-  return {
-    cart: state.cart,
-
-  };
+	return {
+		products: state.products.products,
+		cart: state.cart.cart,
+	
+	};
 };
 
 export default connect(
-  mapStateToProps,
-  { }
-)(ShopingCartContainer);
+	mapStateToProps,
+	{}
+)(ShoppingCartContainer);
