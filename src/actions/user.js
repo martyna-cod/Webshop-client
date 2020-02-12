@@ -1,5 +1,5 @@
 import request from "superagent";
-const baseUrl = "http://localhost:4060";
+import { baseUrl } from '../constants'
 
 export const JWT = "JWT";
 

@@ -9,8 +9,10 @@ export default (state = [], action) => {
     case EMPTY_CART:
       return (state = []);
     case REMOVE_ITEM_FROM_CART:
+        console.log(state)
       return {...state, 
         cart: state.filter(product => product.id !== action.payload.id)}
+      
     default:
       return state;
   }

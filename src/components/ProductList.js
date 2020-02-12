@@ -1,5 +1,4 @@
 import React from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
 import ProductCard from './ProductCard';
 
 export default function ProductList(props) {

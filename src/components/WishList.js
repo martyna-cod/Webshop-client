@@ -20,7 +20,7 @@ class WishList extends Component {
             className="button"
             onClick={() => this.handleremoveItemFromWish(this.props.id)}
           >
-            Remove from cart
+            Remove from wishlist
           </button>
 
         </div>
