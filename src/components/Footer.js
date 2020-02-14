@@ -6,16 +6,68 @@ const FooterPage = () => {
 		<MDBFooter style={{marginTop: "400px"}} color="black" className="font-small pt-4 mt-4">
 			<MDBContainer fluid className="text-center">
 				<MDBRow>
-					<MDBCol>
-						<h5>Footer Content</h5>
-						<p>Here you can use rows and columns here to organize your footer content.</p>
-					</MDBCol>
+				<MDBContainer fluid>
+        <MDBRow>
+		
+          <MDBCol>
+          
+            <ul  style={{fontSize: "13px"}}>
+              <li className="list-unstyled">
+                <a href="#!">Promotions</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Find a store</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Become a member</a>
+              </li>
+        
+            </ul>
+          </MDBCol>
+		  <MDBCol>
+           
+            <ul style={{fontSize: "13px"}}>
+              <li className="list-unstyled">
+                <a href="#!">Order Status</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Shipping and Delivery</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Returns</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Payment Options</a>
+              </li>
+			  <li className="list-unstyled">
+                <a href="#!">Contact us	</a>
+              </li>
+            </ul>
+          </MDBCol>
+		  <MDBCol>
+      
+            <ul    style={{fontSize: "13px"}}>
+              <li className="list-unstyled">
+                <a href="#!">News</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Investors</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Purpose</a>
+              </li>
+        
+            </ul>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
 				</MDBRow>
 			</MDBContainer>
-			<div className="footer-copyright text-center py-3">
+			<div style={{padding: "25px"}} className="footer-copyright text-center py-3">
 				<MDBContainer style={{padding: "5px"}}fluid>
-					&copy; {new Date().getFullYear()} Copyright: WebShop
-                    <br/>    <br/>
+				
+			Netherlands	&copy; {new Date().getFullYear()} Inc. All Rights Reserved
+			<br/>
 					<img style={{padding: "5px"}}
 						src="https://media.bodyandfit.com/i/bodyandfit/mastercard?locale=nl-nl,en-gb,*&layer0=$FOOTER_ICON_001$&fmt=webp"
 						alt="Second slide"

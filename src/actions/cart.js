@@ -4,30 +4,35 @@ export const EMPTY_CART = "EMPTY_CART";
 export const SET_TOTAL = "SET_TOTAL";
 export const SET_QTY = "SET_QTY"
 
-export function addItemToCart(id, name, image, description, price) {
+export function addItemToCart(product) {
+	console.log("Product adding to the cart", product )
   return {
     type: ADD_ITEM_CART,
     payload: {
-      id: id,
-      name: name,
-      description: description,
-      image: image,
-      price: price
+		productId: product.id,
+		name: product.name,
+		price: product.price
+	
     }
   };
 }
 
-export function removeItemFromCart(id) {
+export function removeItemFromCart(product) {
+	console.log("produuuuuuuuuuuct", product.id)
 	return {
 		type: REMOVE_ITEM_FROM_CART,
 		payload: {
-			id: id,
+			productId: product.id,
+			name: product.name,
+			price: product.price
+
 		}
 	};
 }
 
 
 export function emptyCart() {
+	console.log("empty cart action")
 	return {
 		type: EMPTY_CART
 	};
@@ -39,15 +44,5 @@ export function setTotal() {
 	};
 }
 
-export function setQty(id, qty, price) {
-	return {
-		type: SET_QTY,
-		payload: {
-			productId: id,
-			quantity: qty,
-			price: price
-		}
-	};
-}
 
 

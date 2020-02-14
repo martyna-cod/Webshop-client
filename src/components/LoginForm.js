@@ -6,7 +6,7 @@ export default function LoginForm(props) {
 	return (
 		<div className="login-content login-form hybrid-login-form hybrid-login-form-signup">
 		<div className="login-form">
-		<Form  onSubmit={props.onSubmit}>
+		<Form onSubmit={props.onSubmit}>
 			<h1 style={{ padding: "7px", color: "#3D72A4", fontFamily: "'Anton', sans-serif " }}  className="text-center">Sign in </h1>
 			
 			<Form.Group controlId="formBasicEmail">

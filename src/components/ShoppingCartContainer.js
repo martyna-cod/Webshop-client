@@ -4,39 +4,28 @@ import { connect } from "react-redux";
 import { emptyCart } from "../actions/cart";
 
 class ShopingCartContainer extends React.Component {
-  handleemptyCart = id => {
-	console.log("fdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasfsf")
-    this.props.emptyCart(id);
-  };
 
   render() {
     return (
-      <div>
-        <h4>Shopping Cart</h4>
-        <button
-          className="button"
-          onClick={() => this.handleemptyCart(this.props.id)}
-        >
-          Empty cart
-        </button>
-        {this.props.cart.map(product => (
+<div>
+       
           <ShoppingCart
-            key={product.id}	
-            id={product.id}
-            name={product.name}
-            src={product.image	}
-            price={product.price}
+      
+          cart={this.props.cart}
+          products={this.props.products}
+          total={this.props.total}  
+          
           />
-        ))}
-      </div>
-    );
-  }
-}
+      
+    </div> )}}
+    
+  
 
 const mapStateToProps = state => {
   return {
-    products: state.products,
-    cart: state.cart
+  	products: state.products,
+    cart: state.cart.cart,
+    total: state.cart.total.toFixed(2)
   };
 };
 

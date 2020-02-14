@@ -8,9 +8,11 @@ export default (state = [], action) => {
       return [...state, action.payload];
     case EMPTY_WISH:
       return (state = []);
-    case REMOVE_ITEM_FROM_WISH:
-      return {...state, 
-        cart: state.filter(product => product.id !== action.payload.id)}
+      case "REMOVE_FROM_WISHLIST":
+        return {
+          ...state,
+          wishlist: state.wishlist.filter(wish => wish.id !== action.payload.id)
+        };
     default:
       return state;
   }
