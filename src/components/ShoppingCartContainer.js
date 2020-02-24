@@ -1,7 +1,6 @@
 import React from "react";
 import ShoppingCart from "./ShoppingCart";
 import { connect } from "react-redux";
-import { emptyCart } from "../actions/cart";
 
 class ShopingCartContainer extends React.Component {
 
@@ -31,5 +30,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { emptyCart }
+  { }
 )(ShopingCartContainer);

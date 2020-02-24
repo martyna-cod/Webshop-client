@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Component } from 'react';
-/* import { LinkContainer } from 'react-router-bootstrap'; */
+
 import { Row, Col, Carousel, Container, Card } from 'react-bootstrap';
 
 class Home extends Component {

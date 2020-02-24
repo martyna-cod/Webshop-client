@@ -6,8 +6,9 @@ import ProductList from './ProductList';
 
 class ProductListContainer extends React.Component {
 	componentDidMount() {
-		this.props.getProducts();
+	/* 	this.props.getProducts(); */
 	}
+
 
 	render() {
 		return <ProductList products={this.props.products} user={this.props.user} />;
@@ -15,9 +16,9 @@ class ProductListContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-	return { products: state.products, user: state.user };
+	return { user: state.user };
 }
 
-const mapDispatchToProps = { getProducts, ADD_ITEM_CART };
+const mapDispatchToProps = { ADD_ITEM_CART };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductListContainer);

@@ -10,17 +10,17 @@ function ShoppingCart(props) {
 	return (
 		<div className="shopping-cart">
 			<h1>Your Shopping Cart</h1>{' '}
-			{props.products.length < 1 && (
+			{props.cart.length < 1 && (
 				<Alert variant="info">
 					Your cart is empty. How about you go back to the products and start buying? <br />
 					<Link to="/">Go back to our awesome store</Link>
 				</Alert>
 			)}
-			{props.products.length > 0 && (
+			{props.cart.length > 0 && (
 				<div>
 					<Table hover>
 						<tbody>
-							{props.products.map((product) => {
+							{props.cart.map((product) => {
 								return (
 									<tr key={product.id}>
 										<td>

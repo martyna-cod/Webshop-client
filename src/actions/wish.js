@@ -17,7 +17,18 @@ export function addItemToWish(product) {
 export function removeItemFromWish(product) {
 	return {
 		type: REMOVE_ITEM_FROM_WISH,
-		payload: product
+		payload: {
+			productId: product.id,
+			name: product.name,
+			price: product.price
+
+		}
 	};
-  }
-  
+}
+
+export function emptyWish() {
+	return {
+		type: EMPTY_WISH
+	};
+}
+

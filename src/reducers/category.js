@@ -1,14 +1,11 @@
-const initialState = { category: [], loading: "true" };
+import { ALL_CATEGORIES } from '../actions/category';
 
-export default (state = initialState, action) => {
+export default function(state = [], action = {}) {
 	switch (action.type) {
-		case "SET_CATEGORY":
-			return {
-				...state,
-				category: action.payload,
-				loading: false
-			};
-		default:
+		case ALL_CATEGORIES:
+            console.log(action.payload, "payload category")
+			return action.payload;
+    	default:
 			return state;
 	}
-};
+}
