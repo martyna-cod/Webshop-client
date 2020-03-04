@@ -1,11 +1,15 @@
 import React from "react";
-import { Card, Button, Alert } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { addItemToCart } from "../actions/cart";
 import { addItemToWish } from "../actions/wish"
 import { connect } from "react-redux";
+import {
+	BrowserRouter as Router,
+	Link,
+  } from "react-router-dom";
 
 function ProductCard(props) {
-    console.log("propsy", props)
+  
 	const product = props.product;
 
 	return (
@@ -19,6 +23,7 @@ function ProductCard(props) {
 					{product.description}
 						<br />
 					Price: {product.price}€
+					<Link to={`/product/${product.id}`}> See detailes </Link> <br></br>
 				</Card.Text>
 				<Button
 					variant="primary"
@@ -34,32 +39,6 @@ function ProductCard(props) {
 				>
 					Add to wishlist
 				</Button>
-
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
-
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 			</Card.Body>

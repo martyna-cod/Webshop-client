@@ -57,8 +57,7 @@ class Home extends Component {
 							<Card.ImgOverlay>
 								<Card.Title>Shoes</Card.Title>
 								<Card.Text style={{color: "black"}}>
-									This is a wider card with supporting text below as a natural lead-in to additional
-									content. This content is a little bit longer.
+						
 								</Card.Text>
 							</Card.ImgOverlay>
 						</Card>
@@ -70,10 +69,9 @@ class Home extends Component {
 								alt="Card image"
 							/>
 							<Card.ImgOverlay>
-								<Card.Title>Card title</Card.Title>
+								<Card.Title></Card.Title>
 								<Card.Text>
-									This is a wider card with supporting text below as a natural lead-in to additional
-									content. This content is a little bit longer.
+								
 								</Card.Text>
 								<Card.Text>Last updated 3 mins ago</Card.Text>
 							</Card.ImgOverlay>
@@ -99,11 +97,8 @@ class Home extends Component {
 								alt="Card image"
 							/>
 							<Card.ImgOverlay style={{marginTop: "350px"}}>
-								<Card.Title>Card title</Card.Title>
-								<Card.Text>
-									This is a wider card with supporting text below as a natural lead-in to additional
-									content. This content is a little bit longer.
-								</Card.Text>
+								<Card.Title></Card.Title>
+							
 								<Card.Text>JOIN OUR TEAM</Card.Text>
 							</Card.ImgOverlay>
 						</Card>

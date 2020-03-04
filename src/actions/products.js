@@ -4,20 +4,20 @@ export const ALL_PRODUCTS = "ALL_PRODUCTS"
 export const PRODUCT ="PRODUCT"
 export const SEARCH_PRODUCT_BY_CATEGORY ="SEARCH_PRODUCT_BY_CATEGORY"
 export const SET_PRODUCTS_BY_CATEGORY ="SET_PRODUCTS_BY_CATEGORY"
+export const SHOW_PRODUCTS_BY_SEARCH ="SHOW_PRODUCTS_BY_SEARCH," 
 
-  
 function allProducts (payload) {
   return {
     type: ALL_PRODUCTS,
     payload
   }
 }
-function setProductsByCategory (payload) {
+function setProductsByCategory (product) {
+  console.log("setting products")
   return {
     type: SET_PRODUCTS_BY_CATEGORY,
-    payload
-  }
-}
+    product
+}}
 
 export const getProducts = () => (dispatch, getState) => {
   console.log("ACTION GETTTT PRODCUTS")
@@ -37,25 +37,23 @@ export const getProducts = () => (dispatch, getState) => {
 }
 
 export function product (payload) {
+  console.log(product, "product")
   return {
     type: PRODUCT,
     payload
   }
 }
 
-  export const getProduct = productId => (dispatch) => { 
-      console.log("action get product")
-    request
-    .get(`${baseUrl}/product/${productId}`) 
-     .then(res => {
-       const action = product(res.body)
-       console.log(res.body, "RESPPONSE BODY ACTIOOOOOOOOOOOOON")
-       dispatch(action)
-     })
-     .catch(console.error)  
+export const getProduct = productId => (dispatch) => { 
+    
+  request
+  .get(`${baseUrl}/product/${productId}`) 
+   .then(res => {
+     const action = product(res.body)
+     dispatch(action)
+   })
+   .catch(console.error)  
 }
-
-
 
 export function pickCategory(id) {
   console.log(id, "action pickCategory ID")
@@ -66,11 +64,11 @@ export function pickCategory(id) {
 }
 
 export const getProductsByCategory = (categoryId) => (dispatch, getState) => {
-  console.log("ACTION GETTTT PRODCUTS")
+  console.log("ACTION GETTTT PRODCUTS", categoryId)
   const state = getState()
   const { products } = state
 
-  if (!products.length) {
+ /*   if (!products.length) {  */
     request(`${baseUrl}/product/category/${categoryId}`)
       .then(response => {
         console.log(response.body, "products action response")
@@ -79,5 +77,12 @@ export const getProductsByCategory = (categoryId) => (dispatch, getState) => {
         dispatch(action)
       })
       .catch(console.error)
-  }
+  
+}
+
+export function searchProducts(searchText) {
+  return {
+      type: SHOW_PRODUCTS_BY_SEARCH,
+      payload: searchText
+  };
 }
