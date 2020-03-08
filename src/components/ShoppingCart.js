@@ -23,9 +23,9 @@ function ShoppingCart(props) {
 							{props.cart.map((product) => {
 								return (
 									<tr key={product.id}>
-										<td>
-											<img style={{width: "250px"}}className="product-img" alt={product.name} src={product.image} />
-										</td>
+										
+											<img src={product.image} alt={product.name}  />
+										
 										<td>{product.id}</td>
 										<td>{product.name}</td> <br/>	
 										<td>{product.description}</td>

@@ -1,6 +1,7 @@
 import { ADD_ITEM_CART } from "../actions/cart";
 import { REMOVE_ITEM_FROM_CART } from "../actions/cart";
 import { EMPTY_CART, SET_TOTAL } from "../actions/cart";
+
 const initialState = {
 	cart: [],
 	total: 0

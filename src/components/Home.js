@@ -13,9 +13,10 @@ class Home extends Component {
 						<Carousel.Item style={{ width: '1000px', height: '600px', margin: 'auto' }}>
 							<img
 								className="d-block w-100"
-								src="https://wallpapercave.com/wp/wp2586605.jpg"
+								src="https://c.static-nike.com/a/images/f_auto/dpr_1.0/w_1239,c_limit/d64de142-a1e0-4062-aeff-31c49f898e4f/womens-shoes-clothing-accessories.jpg"
 								alt="Second slide"
 							/>
+							
 
 							<Carousel.Caption>
 								<h2>NIKE</h2>
@@ -24,7 +25,7 @@ class Home extends Component {
 						<Carousel.Item style={{ width: '1000px', height: '600px', margin: 'auto' }}>
 							<img
 								className="d-block w-100"
-								src="https://wallpapercave.com/wp/wp2782123.jpg"
+								src="https://wallpapercave.com/wp/wp2586605.jpg"
 								alt="First slide"
 							/>
 

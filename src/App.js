@@ -19,10 +19,15 @@ import { getProducts } from "./actions/products"
 import { getCategories } from "./actions/category"
 
 class App extends React.Component {
+
+  
 	componentDidMount() {
     this.props.getCategories();
     this.props.getProducts();
-  }
+
+
+    };
+  
   render () {
   return (
     <Provider store={store}>
@@ -40,10 +45,26 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { category: state.category,
-           products: state.products };
-}
+const getFilteredProductList = (products, filter, categoryId, searchText) => {
+	switch (filter) {
+		case "SHOW_PRODUCTS_BY_SEARCH":
+			return products.filter(product =>
+				product.name.toLowerCase().includes(searchText.toLowerCase())
+			);
+		default:
+			return products;
+	}
+};
+
+const mapStateToProps = state => {
+	return {
+    products: getFilteredProductList(
+      state.products,
+      state.products.searchText),
+    category: state.category
+    
+   };
+} 
 export default connect(
 	mapStateToProps,
 	{ getCategories, getProducts }

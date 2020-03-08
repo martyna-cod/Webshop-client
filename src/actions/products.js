@@ -81,6 +81,7 @@ export const getProductsByCategory = (categoryId) => (dispatch, getState) => {
 }
 
 export function searchProducts(searchText) {
+  console.log("search")
   return {
       type: SHOW_PRODUCTS_BY_SEARCH,
       payload: searchText
