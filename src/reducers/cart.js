@@ -15,6 +15,7 @@ export default (state = initialState, action) => {
             ...state.cart,
             {
               productId: action.payload.productId,
+              name: action.payload.name,
               price: parseFloat(action.payload.price)
             }],
             total: state.total + parseFloat(action.payload.price * 1)
@@ -34,11 +35,13 @@ export default (state = initialState, action) => {
           };
 
     case REMOVE_ITEM_FROM_CART:
-        console.log(state.cart, "CAAAAAAAAAAAAAAAAART")
+    console.log( "productId")
       return {
-				...state,
+        ...state,
 				cart: state.cart.filter(
-          (product => product.productId === action.payload.productId))}
+          (product => product.productId !== action.payload.productId)
+          ),total: state.total - parseFloat(action.payload.price)
+        }
                 default:
             return state;
             

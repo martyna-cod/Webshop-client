@@ -5,24 +5,23 @@ export const SET_TOTAL = "SET_TOTAL";
 
 
 export function addItemToCart(product) {
-	console.log("Product adding to the cart", product )
+	console.log("Product adding to the cart", product.id )
   return {
     type: ADD_ITEM_CART,
     payload: {
 		productId: product.id,
 		name: product.name,
 		price: product.price
-	
     }
   };
 }
 
 export function removeItemFromCart(product) {
-	console.log("produuuuuuuuuuuct", product.id)
+	console.log("produuuuuuuuuuuct remove action", product)
 	return {
 		type: REMOVE_ITEM_FROM_CART,
 		payload: {
-			productId: product.id,
+			productId: product.productId,
 			name: product.name,
 			price: product.price
 

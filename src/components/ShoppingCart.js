@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { emptyCart, removeItemFromCart, setTotal } from '../actions/cart';
 import { Table, Alert, Button } from 'react-bootstrap';
-import { Link } from "react-router-dom";
-
-
+import { Link } from 'react-router-dom';
 
 function ShoppingCart(props) {
 	return (
@@ -23,21 +21,17 @@ function ShoppingCart(props) {
 							{props.cart.map((product) => {
 								return (
 									<tr key={product.id}>
-										
-											<img src={product.image} alt={product.name}  />
-										
-										<td>{product.id}</td>
-										<td>{product.name}</td> <br/>	
-										<td>{product.description}</td>
-
-									
+										<td>
+											<img className="product-img" alt={product.name} src={product.image} />
+										</td>
+										<td>{product.productId}</td>
+										<td>{product.name}</td> <br />
 										<td>
 											<Button
 												variant="danger"
 												onClick={() => {
 													props.removeItemFromCart(product);
-													props.setTotal();	
-												
+													props.setTotal();
 												}}
 											>
 												X
@@ -60,8 +54,9 @@ function ShoppingCart(props) {
 					</Button>{' '}
 					<br />
 					<br />
-							
-					<Link to="/">Back to our awesome store!</Link>
+					<Link style={{ color: 'black' }} to="/">
+						Back to our awesome store!
+					</Link>
 				</div>
 			)}
 		</div>
