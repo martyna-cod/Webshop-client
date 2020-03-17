@@ -22,9 +22,9 @@ export default function ProductList(props) {
 				/>
 			</Form>
 
-			<Link style={{ color: 'black', marginLeft: '500px' }} to="/">
+			<a href ="/products">
 				Back to our store!
-			</Link>
+			</a>
 			<div className="products">
 				{filteredProducts.map((product) => <ProductCard key={product.id} product={product} />)}
 			</div>

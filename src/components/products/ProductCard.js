@@ -22,7 +22,6 @@ function ProductCard(props) {
 					{product.description}
 					<br />
 					Price: {product.price}€
-					<Link to={`/product/${product.id}`}> See detailes </Link> <br />
 				</Card.Text>
 				<Button variant="primary" block onClick={() =>
 				 {props.addItemToCart(product)
