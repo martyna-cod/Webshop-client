@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { emptyCart, removeItemFromCart, setTotal } from '../actions/cart';
+import { removeItemFromWish, emptyWish, setTotal } from '../../actions/wish';
 import { Table, Alert, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-function ShoppingCart(props) {
+function WishList(props) {
 	return (
 		<div className="shopping-cart">
-			<h1>Your Shopping Cart</h1>{' '}
-			{props.cart.length < 1 && (
+			<h1>Your Wish list</h1>{' '}
+			{props.wish.length < 1 && (
 				<Alert variant="info">
-					Your cart is empty. How about you go back to the products and start buying? <br />
-					<Link to="/">Go back to our awesome store</Link>
+					Your wish list is empty <br />
+					<Link to="/">Go back to our store</Link>
 				</Alert>
 			)}
-			{props.cart.length > 0 && (
+			{props.wish.length > 0 && (
 				<div>
 					<Table hover>
 						<tbody>
-							{props.cart.map((product) => {
+							{props.wish.map((product) => {
 								return (
 									<tr key={product.id}>
 										<td>
-											<img className="product-img" alt={product.name} src={product.image} />
+											<img
+												style={{ width: '250px' }}
+												className="product-img"
+												alt={product.name}
+												src={product.image}
+											/>
 										</td>
 										<td>{product.productId}</td>
 										<td>{product.name}</td> <br />
@@ -30,7 +35,7 @@ function ShoppingCart(props) {
 											<Button
 												variant="danger"
 												onClick={() => {
-													props.removeItemFromCart(product);
+													props.removeItemFromWish(product);
 													props.setTotal();
 												}}
 											>
@@ -49,18 +54,16 @@ function ShoppingCart(props) {
 							</tr>
 						</tfoot>
 					</Table>
-					<Button variant="danger" onClick={() => props.emptyCart()}>
+					<Button variant="danger" onClick={() => props.emptyWish()}>
 						Clear whole cart
 					</Button>{' '}
 					<br />
 					<br />
-					<Link style={{ color: 'black' }} to="/">
-						Back to our awesome store!
-					</Link>
+					<Link to="/">Back to our awesome store!</Link>
 				</div>
 			)}
 		</div>
 	);
 }
 
-export default connect(null, { removeItemFromCart, emptyCart, setTotal })(ShoppingCart);
+export default connect(null, { removeItemFromWish, emptyWish, setTotal })(WishList);

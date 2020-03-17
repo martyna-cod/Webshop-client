@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import LoginForm from './LoginForm';
 import { connect } from 'react-redux';
-import { login } from '../actions/user';
+import { login } from '../../actions/user';
+
 
 class LoginFormContainer extends Component {
 	state = { email: '', password: '' };
@@ -19,7 +20,10 @@ class LoginFormContainer extends Component {
 	render() {
 		return (
 			<div>
-				<LoginForm onChange={this.onChange} onSubmit={this.onSubmit} values={this.state} />
+				<LoginForm 
+				onChange={this.onChange}
+				 onSubmit={this.onSubmit} 
+				 values={this.state} />
 			</div>
 		);
 	}

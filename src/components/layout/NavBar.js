@@ -1,16 +1,17 @@
 import React from 'react';
-import { Dropdown, Button, Form, FormControl, Nav } from 'react-bootstrap';
+import { Dropdown, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { IoIosHeart } from 'react-icons/io';
 import { IoMdCart } from 'react-icons/io';
+import { IoIosHome } from 'react-icons/io';
 import { IoIosPerson } from 'react-icons/io';
 import { connect } from 'react-redux';
-import { getProductsByCategory, searchProducts } from '../actions/products';
+import { getProductsByCategory } from '../../actions/products';
 
 function NavBar(props) {
 	return (
 		<div>
-			<div className="navBar">
+			{/* <div className="navBar">
 				<img
 					className="navbar-img-brands-logo"
 					src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQoAAAC+CAMAAAD6ObEsAAAAdVBMVEX///8AAADz8/Pi4uLAwMDo6OjDw8OAgICrq6vt7e0YGBjc3NzV1dWZmZn7+/vl5eVgYGASEhKhoaFmZmZZWVl8fHyFhYUrKyu7u7seHh5MTEyLi4uoqKhvb29RUVHOzs5EREQ5OTkyMjIjIyOTk5M/Pz90dHSY3gLbAAADcUlEQVR4nO3a6XqqMBCA4QZ3xLXuS7HV9v4v8YC4oGEJgiRwvvd3H2ecJkMm8vEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGKChOwHJUFPc5kpT4BjutK2pFG2hJ26k1m52aOoK7gpTFoXV7thi39cW3xG2tthhzuAghBhY+jJoCLHTF/2i1f30yiC+tS5Py8tAV7cODNudpV8HMXO15vFxFGKuMXywK3ydlsY0fDMvCV1tahTsCt9kqndlehZeGksdgb1dsb7WQfwa8ARb+YlMSw/rDDbi7tMpPQFZ45zKqNSYre5YhG11t4iA7efyU148q9l5KINY63+MB4KmtSgpmnM6PNZBbLSdr591g4TaJYQaPe0Kn8bz9bPGJaXem+NYzflaqoPYvjtsFstLUm8N4px+5TKIdfetQbO6NrDN2yJE7QrfVxlbMgP3mth7Tt3erlhG1kH8mdMiLuzbpi3+s51B1K440zmCx7g/30/FfnDrPldIfgw4X0v64h2luE3bkXSP4DFCC7ioE9bjXCGZl3u8V9YN5Tgu4POSdoVvYmCLuHhIM+dnDduLY2IdNN/SJds+ZJpn5absivOqM7NFBKzHXF+9rhil7IqzhRkjeJznQfmFj/CeFZP0Otj6b+mSWc8ZZ70zUNgVPn0/cSnbSklnaO9pz4obI27p0shpK95jWeGb2WRGjeCxuhGZK0yn998rUq13hreIq++o7I+J71fETduRNoaN4PH6Md9gG/Of7K3mKSeoB+aN4PHkpnkrhrQyrPb2O0MZvNHO2PN1lKTjwLGz6lv+6hhajeZ0byf8aYQfs27pUsXtj5D1UfU5EfZl8vk60vSFb6ngz7zX2lIpHpCyMXcET6IwOWRk5C2dAmn+yMvoETzRqNhCdAy9pVOh8ABRZsCLMnk4hRXChBdlcilqVYyrMIIna6R/SwWLSozgKXr562BXZQRPk7cQFbilU5Xh4iHCvvot4m6XoxCnOrSIu5ebxbJiI7iC2UuFMO1FmUK8csjaV3AEV5G5cVbrli6LbMOpXb8WEeKmF+Cqli0ibKVYCPkKvH5U1sW4PsfKRL2vlI3RrW2rlDXjX6Xbr/6jOpy5e7kK9ueuQj/0FWjoTPeb4Oefye9svnPrNWMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGfwD8Q4ilL8pDfIAAAAASUVORK5CYII="
@@ -51,21 +52,35 @@ function NavBar(props) {
 					src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEX///8AAADBwcEhISFcXFzb29v09PQJCQnIyMiDg4P4+Pjp6enw8PBAQECWlpY0NDSxsbHV1dVvb2/Ozs5KSkoRERHj4+OmpqZXV1e7u7uIiIivr6/Dw8MtLS1jY2NOTk6enp55eXmRkZEpKSl7e3sYGBg7OztxcXGBsxpMAAADRklEQVR4nO3a13biMBCAYRmMY2yaKaYEAikk7/+GS8oSjSQXcjgrkf2/OwtfzBxb0miMUgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQssEsTXuO8Xy27dTaZv881p+Y7KIPT2K0HA2jRs+3kGE+P8c7/I63M6/J69uDx8DbShdawP2vwXLfKr8oWnqNvZWRCHj8OdhpmV8UuSZvULIHGfDntJq0TnDoO4Emva4r4lnrBKO17wwa2M9qfxpNzLSrjX1n0KBvh/zgHq4S9ixMXNvBaS3N2yc48Z1DLfdkW17yCMNO8OAOuqNU2/xWpe8c6mTTirBTtbUH7yy7eFP4zqFWOa56MIV6kQPzziCxhV6MrqtfvVy9iuvYd6w/UreUmCvpwHewP5DX1dRH1RPXoe/oLrNjTYKnjOQbfIMvqb1JHI4iI3nUePQd76XMk8TptSzE/vdiLKUb3xFfqLczE4wHcmlZKrlRjnyHfBn7JPGegKjeJioWN9yrsmcLtZjZWAmm78Mi744aGne4yvOp71ScBlao88+9bqmPFZk8G5ZqEdmCfHdnd2aYfxcRsXgmA3lT7qzDQyxJl1aU5/aDWFqUzPBu4Mqwm/hMxck+SYy/Fwsx8YySZpe5jsPhbZKltUnoMeoTbWe0EeeqcGQYXOvCOkksRINM/yU2XucHV+M0uEf4ZIW4f+r/tclEhn2jaJs69tBuaGdDexeU4Zb65ci4vW/Xscfcd0aGhu71XJY0ZtF2ME/8URzaOprVJ3iaaGKWro0SZq3EYXIxDW8nbOrPGxOtULKkKdQsPZsFWY7aO720kUuLucEHty/YKrqiZwf1pl8mRoZBPjXpviHDrVppVwu5skbHG+hDyYhthdI7p68qFb/ufIffRlVv+0tPPWtXsVH/BP/5811S/z0+z/Sy9NFYmVa+o2+n87brVhnLiWcXbb+AODuM5Mpq/L3mRhl9KPlO3/uO7hrE0lKIdefjY+LtEyVBaWz4qe/orkF8hzL7TjdQtDXT2/zd5Bd8WrPoRdur2ZXxHdxV6J22vfkN33dw15BN47PVRqX7WLt+8x0dAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPzX/gDmNyLy//BPSQAAAABJRU5ErkJggg=="
 					alt=""
 				/>
-			</div>
+			</div> */}
 
-			<Nav className="justify-content-center" activeKey="/home">
+
+			<Nav className="sticky-nav justify-content-center " activeKey="/home">
 				<div className="navbar-links">
-					<div>
-						{/* 	<img className="logo"
+{/* 					<div className="logo">
+							<img className="img-logo"
 							src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJib6cJD5YgqZdWB3e2w-hYlxfOahnSyoeg3W2zJL0_ARH7Ee0&s"
 							alt=""
-						/> */}
+						/> 
+					</div> */}
+			<div className="home-icon">
+				<LinkContainer to="/">
+						<Nav className="icon" active>
+							<IoIosHome style={{fontSize: "30px"}} ></IoIosHome>
+						</Nav>
+					</LinkContainer>
 					</div>
+
+						<LinkContainer to="/products">
+						<Nav className="all-product-link" active>
+							All products
+						</Nav>
+					</LinkContainer>
 					<Dropdown>
 						<Dropdown.Toggle className="btn-category">Women</Dropdown.Toggle>
 
 						<Dropdown.Menu>
-							{props.category.filter((categ) => categ.id < 9 ).map((category) => {
+							{props.category.filter((categ) => categ.id < 9).map((category) => {
 								return (
 									<Dropdown.Item>
 										<LinkContainer to="/products">
@@ -102,53 +117,24 @@ function NavBar(props) {
 						</Dropdown.Menu>
 					</Dropdown>
 
-					<LinkContainer to="/products">
-						<Nav className="navbar-links" active>
-							All products
-						</Nav>
-					</LinkContainer>
-					<Nav.Item>
-						<LinkContainer to="/products">
-							<Nav className="navbar-links" active>
-								Sale
-							</Nav>
-						</LinkContainer>
-					</Nav.Item>
+				
 				</div>
 
-				<div className="search-form">
-					<Form inline onSubmit={props.onSubmit} style={{ marginRight: '1px' }}>
-						<FormControl
-							type="text"
-							placeholder="Search"
-							name="search"
-							value={props.value.search}
-							onChange={props.onChange}
-							className="form-control mr-sm-1"
-						/>
-			
-						<Button type="Submit" className="button-search-bar" variant="primary outline-danger">
-					
-						Search
-						
-						</Button>
-					
-					</Form>
-				</div>
 				<div className="icons">
-					<LinkContainer style={{ padding: '5px' }} to="/wish-list">
-						<Nav className="icon" active>
-							<IoIosHeart />
+					<LinkContainer className="icon" to="/wish-list">
+						<Nav active>
+							<IoIosHeart style={{fontSize: "30px"}} > </IoIosHeart>
+							
 						</Nav>
 					</LinkContainer>
-					<LinkContainer style={{ padding: '5px' }} to="/shopping-cart">
+					<LinkContainer to="/shopping-cart">
 						<Nav className="icon" active>
-							<IoMdCart />
+							<IoMdCart style={{fontSize: "30px"}} ></IoMdCart>
 						</Nav>
 					</LinkContainer>
-					<LinkContainer style={{ padding: '5px' }} to="/login">
-						<Nav className="links" active>
-							<IoIosPerson />
+					<LinkContainer to="/login">
+						<Nav className="icon" active>
+							<IoIosPerson style={{fontSize: "30px"}}> </IoIosPerson>
 						</Nav>
 					</LinkContainer>
 				</div>
@@ -157,4 +143,4 @@ function NavBar(props) {
 	);
 }
 
-export default connect(null, { getProductsByCategory, searchProducts })(NavBar);
+export default connect(null, { getProductsByCategory })(NavBar);

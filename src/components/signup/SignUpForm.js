@@ -3,7 +3,8 @@ import { Form, Button } from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
 
 export default function SignUpForm(props) {
-	return (
+	return (	
+		<div className="login-page">
 		<div className="login-content login-form hybrid-login-form hybrid-login-form-signup">
 			<div className="login-form">
 				<Form className="login-form" onSubmit={props.onSubmit}>
@@ -50,6 +51,7 @@ export default function SignUpForm(props) {
 					<Form.Text className="text-center" />
 				</Form>
 			</div>
+		</div>
 		</div>
 	);
 }
